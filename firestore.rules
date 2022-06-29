@@ -1,0 +1,35 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function signedIn() {
+      return request.auth.uid != null;
+    }
+    function isMe(userUid) {
+      return request.auth.uid == userUid;
+    }
+    function isMyCompany(company) {
+      return request.auth.uid in company.employeeList;
+    }
+    function getCompany(companyId) {
+      return get(/databases/$(database)/documents/companies/$(companyId)).data;
+    }
+    function getConversation(conversationId) {
+      return get(/databases/$(database)/documents/conversations/$(conversationId)).data;
+    }
+    function isMyConversation(conversation) {
+      return isMe(conversation.candidate) || isMyCompany(getCompany(conversation.startup));
+    }
+    match /conversations/{conversation} {
+      allow read: if signedIn() && isMyConversation(resource.data);
+      allow create: if signedIn() && isMyConversation(request.resource.data);
+      allow update: if signedIn() && isMyCompany(getCompany(resource.data.startup)) && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['companyUnreadMessagesCount']);
+    }
+    match /messages/{message} {
+      allow read: if signedIn() && isMyConversation(getConversation(resource.data.conversationId));
+      allow create: if signedIn() && isMyConversation(request.resource.data);
+      allow update: if signedIn() && 
+      ((resource.data.recipientType == "candidate" && isMe(resource.data.recipientId)) || (resource.data.recipientType == "company" && isMyCompany(getCompany(resource.data.recipientId)))) && 
+      request.resource.data.diff(resource.data).affectedKeys().hasOnly(['status'])
+    }
+  }
+}

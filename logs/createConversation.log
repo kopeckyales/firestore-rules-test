@@ -1,0 +1,71 @@
+[2022-06-29T10:00:46.837Z]  @firebase/firestore: Firestore (9.8.4): Connection Opening WebChannel transport. bundle.js:89554:20
+[2022-06-29T10:00:46.838Z]  @firebase/firestore: Firestore (9.8.4): Connection WebChannel sending: {"database":"projects/startup-talent-2020/databases/(default)"} bundle.js:89554:20
+[2022-06-29T10:00:46.840Z]  @firebase/firestore: Firestore (9.8.4): MemoryPersistence Starting transaction: Allocate target bundle.js:89554:20
+[2022-06-29T10:00:46.841Z]  @firebase/firestore: Firestore (9.8.4): Connection WebChannel sending: {"database":"projects/startup-talent-2020/databases/(default)","addTarget":{"query":{"structuredQuery":{"from":[{"collectionId":"messages"}],"where":{"fieldFilter":{"field":{"fieldPath":"conversationId"},"op":"EQUAL","value":{"stringValue":"7O4Sw2KTxjGf1hzt0y4O"}}},"orderBy":[{"field":{"fieldPath":"__name__"},"direction":"ASCENDING"}]},"parent":"projects/startup-talent-2020/databases/(default)/documents"},"targetId":6}} bundle.js:89554:20
+[2022-06-29T10:00:46.841Z]  @firebase/firestore: Firestore (9.8.4): MemoryPersistence Starting transaction: Execute query bundle.js:89554:20
+[2022-06-29T10:00:46.841Z]  @firebase/firestore: Firestore (9.8.4): QueryEngine Using full collection scan to execute query: Query(target=Target(messages, filters: [conversationId == 7O4Sw2KTxjGf1hzt0y4O], orderBy: [__name__ (asc)]); limitType=F) bundle.js:89554:20
+[2022-06-29T10:00:46.893Z]  @firebase/firestore: Firestore (9.8.4): Connection WebChannel received: {"targetChange":{"targetChangeType":"ADD","targetIds":[6]}} bundle.js:89554:20
+[2022-06-29T10:00:46.918Z]  @firebase/firestore: Firestore (9.8.4): Connection WebChannel received: {"targetChange":{"targetChangeType":"REMOVE","targetIds":[6],"cause":{"code":7,"message":"Missing or insufficient permissions."}}} bundle.js:89554:20
+[2022-06-29T10:00:46.918Z]  @firebase/firestore: Firestore (9.8.4): Connection WebChannel received: {"targetChange":{"resumeToken":"CgkIxIvozbPS+AI=","readTime":"2022-06-29T10:00:40.115652Z"}} bundle.js:89554:20
+[2022-06-29T10:00:46.919Z]  @firebase/firestore: Firestore (9.8.4): MemoryPersistence Starting transaction: Release target bundle.js:89554:20
+Uncaught Error in snapshot listener: FirebaseError: Missing or insufficient permissions.
+    FirebaseError http://localhost:3000/static/js/bundle.js:37843
+    Q http://localhost:3000/static/js/bundle.js:13452
+    node_modules firebase/firestore/dist/index.esm2017.js/Qs/u<@http://localhost:3000/static/js/bundle.js:20137
+    Qs http://localhost:3000/static/js/bundle.js:20147
+    onMessage http://localhost:3000/static/js/bundle.js:28908
+    node_modules firebase/firestore/dist/index.esm2017.js/Uo/</<@http://localhost:3000/static/js/bundle.js:28841
+    node_modules firebase/firestore/dist/index.esm2017.js/Lo/</<@http://localhost:3000/static/js/bundle.js:28875
+    node_modules firebase/firestore/dist/index.esm2017.js/enqueue/<@http://localhost:3000/static/js/bundle.js:33427
+    node_modules firebase/firestore/dist/index.esm2017.js/Qc/e<@http://localhost:3000/static/js/bundle.js:33464
+    promise callback*Qc http://localhost:3000/static/js/bundle.js:33464
+    enqueue http://localhost:3000/static/js/bundle.js:33427
+    enqueueAndForget http://localhost:3000/static/js/bundle.js:33404
+    node_modules firebase/firestore/dist/index.esm2017.js/Lo/<@http://localhost:3000/static/js/bundle.js:28875
+    node_modules firebase/firestore/dist/index.esm2017.js/Uo/<@http://localhost:3000/static/js/bundle.js:28841
+    no http://localhost:3000/static/js/bundle.js:28161
+    node_modules firebase/firestore/dist/index.esm2017.js/ho/<@http://localhost:3000/static/js/bundle.js:28403
+    node_modules firebase/firestore/dist/index.esm2017.js/ho/y/<@http://localhost:3000/static/js/bundle.js:28348
+    qb http://localhost:3000/static/js/bundle.js:39739
+    D http://localhost:3000/static/js/bundle.js:39697
+    node_modules firebase/webchannel-wrapper/dist/index.esm2017.js/Z.prototype.wa@http://localhost:3000/static/js/bundle.js:41833
+    sc http://localhost:3000/static/js/bundle.js:40459
+    tc http://localhost:3000/static/js/bundle.js:40314
+    node_modules firebase/webchannel-wrapper/dist/index.esm2017.js/k.Ia@http://localhost:3000/static/js/bundle.js:40287
+    node_modules firebase/webchannel-wrapper/dist/index.esm2017.js/k.gb@http://localhost:3000/static/js/bundle.js:40215
+    qb http://localhost:3000/static/js/bundle.js:39739
+    D http://localhost:3000/static/js/bundle.js:39697
+    Ed http://localhost:3000/static/js/bundle.js:41173
+    node_modules firebase/webchannel-wrapper/dist/index.esm2017.js/k.cb@http://localhost:3000/static/js/bundle.js:41169
+    node_modules firebase/webchannel-wrapper/dist/index.esm2017.js/k.Fa@http://localhost:3000/static/js/bundle.js:41165
+    sd http://localhost:3000/static/js/bundle.js:41055
+    node_modules firebase/webchannel-wrapper/dist/index.esm2017.js/k.Sa@http://localhost:3000/static/js/bundle.js:41011
+    promise callback*ud http://localhost:3000/static/js/bundle.js:41000
+    node_modules firebase/webchannel-wrapper/dist/index.esm2017.js/k.Sa@http://localhost:3000/static/js/bundle.js:41012
+    promise callback*ud http://localhost:3000/static/js/bundle.js:41000
+    node_modules firebase/webchannel-wrapper/dist/index.esm2017.js/k.Sa@http://localhost:3000/static/js/bundle.js:41012
+    promise callback*ud http://localhost:3000/static/js/bundle.js:41000
+    node_modules firebase/webchannel-wrapper/dist/index.esm2017.js/k.Sa@http://localhost:3000/static/js/bundle.js:41012
+    promise callback*ud http://localhost:3000/static/js/bundle.js:41000
+    node_modules firebase/webchannel-wrapper/dist/index.esm2017.js/k.Va@http://localhost:3000/static/js/bundle.js:40995
+    promise callback*./node_modules/ firebase/webchannel-wrapper/dist/index.esm2017.js/k.send@http://localhost:3000/static/js/bundle.js:40974
+    node_modules firebase/webchannel-wrapper/dist/index.esm2017.js/k.ea@http://localhost:3000/static/js/bundle.js:41124
+    kc http://localhost:3000/static/js/bundle.js:40207
+    Rd http://localhost:3000/static/js/bundle.js:41598
+    node_modules firebase/webchannel-wrapper/dist/index.esm2017.js/k.Ga@http://localhost:3000/static/js/bundle.js:41562
+    Db http://localhost:3000/static/js/bundle.js:39830
+    promise callback*Ab http://localhost:3000/static/js/bundle.js:39820
+    zb http://localhost:3000/static/js/bundle.js:39810
+    Gc http://localhost:3000/static/js/bundle.js:41549
+    sc http://localhost:3000/static/js/bundle.js:40455
+    tc http://localhost:3000/static/js/bundle.js:40314
+    node_modules firebase/webchannel-wrapper/dist/index.esm2017.js/k.Ia@http://localhost:3000/static/js/bundle.js:40287
+    node_modules firebase/webchannel-wrapper/dist/index.esm2017.js/k.gb@http://localhost:3000/static/js/bundle.js:40215
+    qb http://localhost:3000/static/js/bundle.js:39739
+    D http://localhost:3000/static/js/bundle.js:39697
+    Ed http://localhost:3000/static/js/bundle.js:41173
+    node_modules firebase/webchannel-wrapper/dist/index.esm2017.js/k.cb@http://localhost:3000/static/js/bundle.js:41169
+    node_modules firebase/webchannel-wrapper/dist/index.esm2017.js/k.Fa@http://localhost:3000/static/js/bundle.js:41165
+    sd http://localhost:3000/static/js/bundle.js:41055
+    node_modules firebase/webchannel-wrapper/dist/index.esm2017.js/k.Sa@http://localhost:3000/static/js/bundle.js:41011
+react_devtools_backend.js:4026:25
