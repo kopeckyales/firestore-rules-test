@@ -11,7 +11,7 @@ Security rules denying read access for messages collection query when listener i
 
 When conversation document does not exist and I call **/src/Conversation.js#createConversation** method, listener for messages collection query throws an *Missing permissions* exception.
 
-This problem does not seem to affect write security rule in messages collection, because when I call **/src/Conversation.js#sendMessage**, message is created in the firestore collection. 
+This problem does not seem to affect write security rule in messages collection, because when I call **/src/Conversation.js#sendMessage** with no conversation loaded (conversation is created just before the message), message is created in the firestore collection. 
 
 The problem seems to be connected with the **get** of newly created document used in read security rule.
 
