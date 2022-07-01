@@ -20,3 +20,25 @@ When I refresh the page after I get *Missing permissions* error from **/src/Conv
 ## Firebase npm package version used
 - 9.8.4 in this example
 - 8.10.1 in my production code (has the same problem)
+
+
+## Running this example
+
+### Prerequisites
+1. Firebase project
+1. Active Firebase Authentication user with email+password provider
+1. Deployed Firestore rules from file **/firestore.rules**
+1. Existing companies collection in Firestore with document illustrated in **/seed/companies/N5FCErE4bOF63FNVvjkJ.json** (employeeList has to include uid of the authenticated user)
+1. .env file in **/.env** (see .env.example for required env variables)
+    1. REACT_APP_USER_EMAIL = email of the Authentication user from step 2.
+    2. REACT_APP_USER_PASSWORD = password of the Authentication user from step 2.
+    3. REACT_APP_COMPANY_ID = ID of the Firestore document in companies collection from step 4.
+1. Node.js installed (This sample app was created with Node.js 16)
+
+### To run the project
+```
+# npm install
+# npm run start
+```
+
+> For more info on CRA see https://create-react-app.dev/
