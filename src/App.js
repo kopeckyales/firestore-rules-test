@@ -11,11 +11,11 @@ function App() {
 
   return (
     <div>
-      <button disabled={user !== undefined} onClick={() => {
+      <button disabled={user} onClick={() => {
         signInWithEmailAndPassword(getAuth(), process.env.REACT_APP_USER_EMAIL, process.env.REACT_APP_USER_PASSWORD)
 
       }}>Login</button>
-      <button disabled={user === undefined} onClick={() => {
+      <button disabled={!user} onClick={() => {
         signOut(getAuth())
 
       }}>Logout</button>
