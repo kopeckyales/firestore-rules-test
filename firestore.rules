@@ -26,7 +26,7 @@ service cloud.firestore {
     }
     match /messages/{message} {
       allow read: if signedIn() && isMyConversation(getConversation(resource.data.conversationId));
-      allow create: if signedIn() && isMyConversation(request.resource.data);
+      allow create: if signedIn() && isMyConversation(getConversation(request.resource.data.conversationId));
       allow update: if signedIn() && 
       ((resource.data.recipientType == "candidate" && isMe(resource.data.recipientId)) || (resource.data.recipientType == "company" && isMyCompany(getCompany(resource.data.recipientId)))) && 
       request.resource.data.diff(resource.data).affectedKeys().hasOnly(['status'])
